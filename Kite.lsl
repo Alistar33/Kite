@@ -17,9 +17,20 @@ default
 {
     state_entry()
     {
+    
+    /*  llSetPhysicsMaterial : Used to set the physical characteristics of an object.
+• integer	mask	–	bitwise combination of DENSITY, FRICTION, RESTITUTION, and GRAVITY_MULTIPLIER and specifies which floats to actually apply	
+• float	gravity_multiplier	–	range [-1.0, +28.0], default: 1.0	
+• float	restitution	–	range [0.0, 1.0], default: [0.3, 0.9] [1]	
+• float	friction	–	range [0.0, 255.0], default: [0.2, 0.9][1]	
+• float	density	–	range [1.0, 22587.0] kg/m^3, default: 1000.0	
+The default values for friction and restitution depend upon the material type. */
+
         llSetPhysicsMaterial(15,gGravity,0.5,0.5,1000.0);
         llSetStatus(STATUS_PHYSICS,FALSE);
-        
+
+// Please read: https://wiki.secondlife.com/wiki/LlParticleSystem
+
         llParticleSystem([]);
     }
     on_rez(integer i)
